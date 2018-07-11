@@ -1,0 +1,102 @@
+﻿@model WebApp2.Models.QuartasViewModel
+
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+}
+
+<h2>Quartas</h2>
+
+@using (Html.BeginForm("Index", "Paises", FormMethod.Post))
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="col-xs-1">
+                    @Html.DisplayNameFor(model => model.JogoQ.Pais1)
+                </th>
+                <th class="col-xs-1">
+                    Gols
+                </th>
+                <th class="col-xs-1">
+                    @Html.DisplayNameFor(model => model.JogoQ.Pais2)
+                </th>
+                <th class="col-xs-1">
+                    Gols
+                </th>
+
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.JogosQ)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais1.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais2.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP2)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais3.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais4.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP4)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais5.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais6.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP6)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais7.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais8.Name)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.GP8)
+                    </td>
+                </tr>
+
+            </tbody>
+        }
+    </table>
+    <input class="btn btn-default" type="submit" value="Enviar" />
+}
+
+
+
+
+
+
